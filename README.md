@@ -1,4 +1,4 @@
-#Aier
+# Aier
 
 **A Simple PHP Frame**
 
@@ -13,7 +13,7 @@ This is a small frame, and fast development for mobile or web.
 
 在 config/route.php 配置文件中添加路由：
 
-Add routes in config/route.php: 
+Add routes in config/route.php:
 
 ```php
 use NoahBuscher\Macaw\Macaw;
@@ -52,7 +52,7 @@ function email()
         ->from('Evai <xxx@163.com>')
         ->title('Hello World')
         ->content('<h1>Hello World !</h1>');
-        
+
 		echo '发送邮件成功';
 }
 
@@ -100,7 +100,7 @@ Add HomeController:
 public function home()
 {
     $user = Users::find(1); //your model
-    
+
     return View::make('home') //your template
         ->with('user', $user)
         ->withTitle('Aier')
@@ -168,3 +168,7 @@ function redis()
 }
 
 ```
+
+如果你新建了一个控制器或模型，请务必执行下 composer dump-autoload 命令。
+
+if you create a new Controller or Model, please run command : composer dump-autoload.
