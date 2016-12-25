@@ -10,27 +10,28 @@ class HomeController extends BaseController
 
     public function home()
     {
-        /*return View::make('home')
-            ->with('article', Articles::find(1))
-            ->withTitle('Frame')
-            ->withShowMsg('hello world');*/
+        $user = Users::find(1); //your model
 
+        return View::make('home')
+            ->with('user', $user)
+            ->withTitle('Aier')
+            ->withShowMsg('hello Aier');
     }
 
     function mail()
     {
-       /* Mail::to(['xxx@qq.com'])
+        Mail::to(['xxx@qq.com'])
             ->from('Evai <xxx@163.com>')
             ->title('Hello World')
             ->content('<h1>Hello World !</h1>');
-        echo '发送邮件成功';*/
+        echo '发送邮件成功';
     }
 
     function redis()
     {
-        /*Redis::set('name', 'Evai', 5);
+        Redis::set('name', 'Evai', 5);
 
-        echo Redis::get('name');*/
+        echo Redis::get('name');
 
     }
 

@@ -115,7 +115,7 @@ class MysqlPDO
      * 调试模式
      * @var bool
      */
-    public $debug = false;
+    public $debug = true;
     /**
      * 返回值
      * @var array

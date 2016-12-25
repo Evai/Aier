@@ -6,7 +6,7 @@ return [
 
     'host'      => 'localhost',
 
-    'database'  => 'weishenghuo',
+    'database'  => 'sanhaohuisuo',
 
     'username'  => 'root',
 

@@ -26,15 +26,23 @@ class View
      */
     public static function make($viewName = null)
     {
-        if ( ! $viewName ) {
+        if ( ! $viewName )
+        {
+
             throw new InvalidArgumentException("视图名称不能为空！");
+
         } else {
 
             $viewFilePath = self::getFilePath($viewName);
+
             if ( is_file($viewFilePath) ) {
+
                 return new View($viewFilePath);
+
             } else {
+
                 throw new UnexpectedValueException("视图文件不存在！");
+
             }
 
         }
@@ -49,6 +57,7 @@ class View
     public function with($key, $value = null)
     {
         $this->data[$key] = $value;
+
         return $this;
     }
 
@@ -60,6 +69,7 @@ class View
     private static function getFilePath($viewName)
     {
         $filePath = str_replace('.', '/', $viewName);
+
         return BASE_PATH.self::VIEW_BASE_PATH.$filePath.'.php';
     }
 

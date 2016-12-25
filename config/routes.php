@@ -1,22 +1,22 @@
 <?php
 
-use NoahBuscher\Macaw\Macaw as Route;
+use NoahBuscher\Macaw\Macaw;
 
-Route::get('/', function() {
+Macaw::get('/', function() {
   echo "Welcome";
 });
 
-Route::get('/name/(:all)', function($name) {
+Macaw::get('/name/(:all)', function($name) {
   echo 'Your name is '.$name;
 });
 
-Route::get('home', 'HomeController@home');
-Route::get('mail', 'HomeController@mail');
-Route::get('redis', 'HomeController@redis');
+Macaw::any('home', 'HomeController@home');
+Macaw::get('mail', 'HomeController@mail');
+Macaw::get('redis', 'HomeController@redis');
 
-Route::error(function() {
+Macaw::error(function() {
     throw new Exception("404 Not Found");
 });
 
 
-Route::dispatch();
+Macaw::dispatch();

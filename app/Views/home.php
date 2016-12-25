@@ -14,11 +14,11 @@
 
 <div class="article">
 
-    <h1><?php echo $article['name'] ?></h1>
+    <h1><?php echo $user['name'] ?></h1>
 
     <div class="content">
 
-        <?php echo $article  ?>
+        <?php echo $user  ?>
 
     </div>
 
