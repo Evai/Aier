@@ -7,6 +7,14 @@
 
 This is a small frame, and fast development for mobile or web.
 
+## 安装 Installation
+
+```bash
+$ composer update
+$ composer dump-autoload
+
+```
+
 ## DEMO
 
 ### 路由 Route

@@ -10,7 +10,7 @@ Macaw::get('/name/(:all)', function($name) {
   echo 'Your name is '.$name;
 });
 
-Macaw::any('home', 'HomeController@home');
+Macaw::get('home', 'HomeController@home');
 Macaw::get('mail', 'HomeController@mail');
 Macaw::get('redis', 'HomeController@redis');
 
