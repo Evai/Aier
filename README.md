@@ -10,6 +10,7 @@ This is a small frame, and fast development for mobile or web.
 ## 安装 Installation
 
 ```bash
+$ cd Aier
 $ composer update
 $ composer dump-autoload
 
