@@ -20,11 +20,11 @@ class HomeController extends BaseController
 
     function mail()
     {
-        Mail::to(['xxx@qq.com'])
+        /*Mail::to(['xxx@qq.com'])
             ->from('Evai <xxx@163.com>')
             ->title('Hello World')
             ->content('<h1>Hello World !</h1>');
-        echo '发送邮件成功';
+        echo '发送邮件成功';*/
     }
 
     function redis()
