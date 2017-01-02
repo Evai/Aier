@@ -6,6 +6,8 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 define('BASE_PATH', __DIR__);
 
+define('DEBUG', 1);
+
 // Autoload 自动载入
 
 require BASE_PATH . '/vendor/autoload.php';
@@ -16,12 +18,27 @@ $capsule = new Capsule;
 
 $capsule->addConnection(require BASE_PATH . '/config/database.php');
 
+// Set the event dispatcher used by Eloquent models... (optional)
+use Illuminate\Events\Dispatcher;
+use Illuminate\Container\Container;
+$capsule->setEventDispatcher(new Dispatcher(new Container));
+
+// Make this Capsule instance available globally via static methods... (optional)
+$capsule->setAsGlobal();
+
+// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
 
-// whoops 错误提示
+if (DEBUG) {
 
-$whoops = new \Whoops\Run;
+    require BASE_PATH.'/app/Exceptions/Handler.php';
 
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $error = new Handler();
 
-$whoops->register();
+    $error->render();
+
+} else {
+
+    ini_set('display_errors', '0');
+}
+

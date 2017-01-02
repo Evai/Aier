@@ -1,22 +1,23 @@
 <?php
 
-use NoahBuscher\Macaw\Macaw;
+use Evai\Tenden\Tenden;
 
-Macaw::get('/', function() {
+Tenden::get('/', function() {
   echo "Welcome";
 });
 
-Macaw::get('/name/(:all)', function($name) {
+Tenden::get('/name/(:all)', function($name) {
   echo 'Your name is '.$name;
 });
 
-Macaw::get('home', 'HomeController@home');
-Macaw::get('mail', 'HomeController@mail');
-Macaw::get('redis', 'HomeController@redis');
+Tenden::get('home', 'HomeController@home');
+Tenden::get('mail', 'HomeController@mail');
+Tenden::get('redis', 'HomeController@redis');
+Tenden::get('test', 'HomeController@test');
 
-Macaw::error(function() {
+Tenden::error(function() {
     throw new Exception("404 Not Found");
 });
 
 
-Macaw::dispatch();
+Tenden::dispatch();

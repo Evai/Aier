@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Users
+ */
 class Users extends Model
 {
 
