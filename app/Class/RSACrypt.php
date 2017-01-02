@@ -204,9 +204,9 @@ class RSACrypt
             $pubKey = str_replace("-----END PUBLIC KEY-----", "", $pubKey);
             $pubKey = str_replace("\n", "", $pubKey);
 
-            $pubKey = "-----BEGIN PUBLIC KEY-----\n" .
-                wordwrap($pubKey, 64, "\n", true) .
-                "\n-----END PUBLIC KEY-----";
+            $pubKey = "-----BEGIN PUBLIC KEY-----" . PHP_EOL .
+                wordwrap($pubKey, 64, "\n", true) . PHP_EOL .
+                "-----END PUBLIC KEY-----";
 
             //转换为openssl格式密钥
             $res = openssl_pkey_get_public($pubKey);
