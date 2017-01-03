@@ -25,23 +25,23 @@ $ composer dump-autoload
 Add routes in config/route.php:
 
 ```php
-use NoahBuscher\Macaw\Macaw;
+use Evai\Tenden\Tenden;
 
-Macaw::get('/', function() {
+Tenden::any('/', function() {
   echo "Welcome";
 });
 
-Macaw::get('/name/(:all)', function($name) {
+Tenden::get('/name/(:all)', function($name) {
   echo 'Your name is '.$name;
 });
 
-Macaw::get('home', 'HomeController@home'); //your controller class
+Tenden::get('home', 'HomeController@home'); //your controller class
 
-Macaw::error(function() {
+Tenden::error(function() {
     throw new Exception("404 Not Found"); //not found route then write
 });
 
-Macaw::dispatch(); //Don't forget add in the end
+Tenden::dispatch(); //Don't forget add in the end
 
 ```
 
