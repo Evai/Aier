@@ -1,2 +1,6 @@
 /vendor
 /.idea
+public/rsa_private_key.pem
+public/rsa_public_key.pem
+cache/
+log/

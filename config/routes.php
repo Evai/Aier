@@ -16,7 +16,8 @@ Tenden::get('redis', 'HomeController@redis');
 Tenden::get('test', 'HomeController@test');
 
 Tenden::error(function() {
-    throw new Exception("404 Not Found");
+    //throw new Exception("404 Not Found");
+    echo '404 Not Found';
 });
 
 

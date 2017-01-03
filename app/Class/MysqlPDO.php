@@ -192,6 +192,9 @@ class MysqlPDO
 
     }
 
+    /**
+     * @param Exception $e
+     */
     private function getError(Exception $e)
     {
         if ($this->debug) {

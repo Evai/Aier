@@ -19,7 +19,9 @@ class Handler extends Exception
             'class' => get_class($exception)
         ];
 
-        echo json_encode($err);
+        $err = json_encode($err);
+        echo $err;
+        Log::info($err);
     }
 
     /**

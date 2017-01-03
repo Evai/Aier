@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Illuminate\Http\Request;
 /**
  * Class HomeController
  */
@@ -11,7 +12,7 @@ class HomeController extends BaseController
      */
     function __construct()
     {
-
+        $this->requestLimit();
     }
 
     public function home()
@@ -22,21 +23,12 @@ class HomeController extends BaseController
             ->with('user', $user)
             ->withTitle('Aier')
             ->withShowMsg('hello Aier');*/
-        //setcookie("user", "Alex Porter", time()+60);
-        //session_start();
-        //session_destroy();
-//        if (isset($_SESSION['view'])) {
-//            $_SESSION['view'] += 1;
-//        } else {
-//            $_SESSION['view'] = 1;
-//        }
-        //echo json_encode($_SESSION);
 
         $data = DB::table('users')->where('userid', 1)->first();
-        //var_dump($data);
-        $rsa = new RSACrypt('./');
+        $rsa = new RSACrypt();
 
-        //exit(var_dump($rsa->publicKey));
+        $rsa->setPrivateKeyPath('./rsa_private_key.pem');
+        $rsa->setPublicKeyPath('./rsa_public_key.pem');
         // 使用公钥加密
         $str = $rsa->publicEncrypt('hello');
         // 这里使用base64是为了不出现乱码，默认加密出来的值有乱码
@@ -80,15 +72,15 @@ class HomeController extends BaseController
     }
 
     /**
+     * @param Request $request
      * @return Twig
      */
-    function test()
+    function test(Request $request)
     {
-        $data = ['data' => ['name' => 'evai', 'mobile' => 12312321213]];
-
-        Log::info(json_encode($_SERVER));
+        $data = ['data' => ['name' => 'evai', 'mobile' => 12345678910], 're' => $request->input()];
 
         return Twig::render('index.twig', $data);
+
     }
 
 }

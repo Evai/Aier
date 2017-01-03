@@ -16,18 +16,15 @@ class RSACrypt
 
     /**
      * RSACrypt constructor.
-     * @param string $keyPath
+     * @param null $keyPath
      */
     public function __construct($keyPath = null)
     {
-        if (empty($keyPath))
-        {
-            return;
-        }
+        if (empty($keyPath)) return;
 
         $config = array(
             "digest_alg" => "sha512",
-            "private_key_bits" => 1024,
+            "private_key_bits" => 2048,
             "private_key_type" => OPENSSL_KEYTYPE_RSA,
         );
 
