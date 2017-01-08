@@ -6,6 +6,8 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 define('BASE_PATH', __DIR__);
 
+define('APP_PATH', __DIR__ . '/app');
+
 define('DEBUG', 1);
 
 // Autoload 自动载入
