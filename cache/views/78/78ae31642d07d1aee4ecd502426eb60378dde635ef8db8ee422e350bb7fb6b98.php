@@ -7,8 +7,8 @@ class __TwigTemplate_a60cb21f8de99e7adf2fc4fe212591471c41ba69f70a77aab2c1c8328b1
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("app.twig", "index.twig", 1);
+        // line 2
+        $this->parent = $this->loadTemplate("app.twig", "index.twig", 2);
         $this->blocks = array(
             'content' => array($this, 'block_content'),
         );
@@ -24,13 +24,13 @@ class __TwigTemplate_a60cb21f8de99e7adf2fc4fe212591471c41ba69f70a77aab2c1c8328b1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 3
     public function block_content($context, array $blocks = array())
     {
-        // line 3
+        // line 4
         echo "
 hello ";
-        // line 4
+        // line 5
         echo twig_escape_filter($this->env, $this->getAttribute(($context["data"] ?? null), "name", array()), "html", null, true);
         echo ", your mobile is ";
         echo twig_escape_filter($this->env, $this->getAttribute(($context["data"] ?? null), "mobile", array()), "html", null, true);
@@ -51,7 +51,7 @@ hello ";
 
     public function getDebugInfo()
     {
-        return array (  34 => 4,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  34 => 5,  31 => 4,  28 => 3,  11 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -64,7 +64,8 @@ hello ";
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'app.twig' %}
+        return new Twig_Source("{#index.twig#}
+{% extends 'app.twig' %}
 {% block content %}
 
 hello {{ data.name }}, your mobile is {{ data.mobile }}

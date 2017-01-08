@@ -81,6 +81,7 @@ class HomeController extends BaseController
 
         return Twig::render('index.twig', $data);
 
+
     }
 
 }

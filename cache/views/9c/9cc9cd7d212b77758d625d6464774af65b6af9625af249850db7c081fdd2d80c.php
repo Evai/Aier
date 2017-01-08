@@ -16,8 +16,9 @@ class __TwigTemplate_4f76cfd51d430b65277a9889e4925e9d8edf7aa83a3954f3e66cc7db4a6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "<!DOCTYPE html>
+        // line 2
+        echo "
+<!DOCTYPE html>
 <html lang=\"en\">
 <head>
     <meta charset=\"UTF-8\">
@@ -29,9 +30,9 @@ class __TwigTemplate_4f76cfd51d430b65277a9889e4925e9d8edf7aa83a3954f3e66cc7db4a6
 <header>header</header>
 
 ";
-        // line 12
+        // line 14
         $this->displayBlock('content', $context, $blocks);
-        // line 15
+        // line 17
         echo "
 <footer>footer</footer>
 
@@ -39,10 +40,10 @@ class __TwigTemplate_4f76cfd51d430b65277a9889e4925e9d8edf7aa83a3954f3e66cc7db4a6
 </html>";
     }
 
-    // line 12
+    // line 14
     public function block_content($context, array $blocks = array())
     {
-        // line 13
+        // line 15
         echo "
 ";
     }
@@ -54,7 +55,7 @@ class __TwigTemplate_4f76cfd51d430b65277a9889e4925e9d8edf7aa83a3954f3e66cc7db4a6
 
     public function getDebugInfo()
     {
-        return array (  46 => 13,  43 => 12,  35 => 15,  33 => 12,  20 => 1,);
+        return array (  47 => 15,  44 => 14,  36 => 17,  34 => 14,  20 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -67,7 +68,9 @@ class __TwigTemplate_4f76cfd51d430b65277a9889e4925e9d8edf7aa83a3954f3e66cc7db4a6
 
     public function getSourceContext()
     {
-        return new Twig_Source("<!DOCTYPE html>
+        return new Twig_Source("{#app.twig#}
+
+<!DOCTYPE html>
 <html lang=\"en\">
 <head>
     <meta charset=\"UTF-8\">
